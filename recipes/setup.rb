@@ -81,7 +81,6 @@ if node['platform_family'] == 'debian'
 else
   if node['platform'] == 'amazon'
     execute "amazon-linux-extras install ruby#{node['ruby-version']}"
-    execute "/usr/sbin/alternatives --set ruby /usr/bin/ruby"
   else
     ruby_pkg_version = node['ruby-version'].split('.')[0..1]
     package "ruby#{ruby_pkg_version.join('')}"
