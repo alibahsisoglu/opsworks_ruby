@@ -8,7 +8,7 @@ module Drivers
       packages debian: 'libpq-dev', rhel: 'postgresql-devel'
 
       def setup
-        execute 'amazon-linux-extras install postgresql10' if node['platform'] == 'amazon'
+        context.execute 'amazon-linux-extras install postgresql10' if node['platform'] == 'amazon'
         super
       end
     end
